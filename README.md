@@ -40,3 +40,4 @@ ng new frontend
 - corrigir o endpoint de atualização do documento
 - alteração de banco pra realizar o estado de `encerrado` **usando liquibase**
 - adicionar documentação swagger
+- aumentar a cobertura de testes do backend (ver plugin do jacoco no gradle)

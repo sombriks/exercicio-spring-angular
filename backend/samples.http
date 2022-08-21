@@ -1,3 +1,15 @@
+### listar setores
+GET http://localhost:8080/setores
+Content-Type: application/json
+
+### listar pastas
+GET http://localhost:8080/setores/1/pastas
+Content-Type: application/json
+
+### listar situação de documentos
+GET http://localhost:8080/situacoes
+Content-Type: application/json
+
 ### listar documentos
 GET http://localhost:8080/setores/1/pastas/1/documentos
 Content-Type: application/json
