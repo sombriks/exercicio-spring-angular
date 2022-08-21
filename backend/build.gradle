@@ -42,7 +42,10 @@ tasks.named('test') {
 liquibase {
 	activities {
 		main {
-			changeLogFile "src/main/resources/db/changelog/db.changelog-master.yaml"
+			// classpath fix pra ser compatível com
+			// as migrações rodando pelo spring boot
+			classpath "src/main/resources"
+			changeLogFile "db/changelog/db.changelog-master.yaml"
 			url "jdbc:mysql://localhost:33066/exercicio_spring_angular"
 			driver "com.mysql.cj.jdbc.Driver"
 			username "root"
