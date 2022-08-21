@@ -33,4 +33,20 @@ public class DocumentoController {
         return service.findById(setorId, pastaId, id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+
+    @PostMapping
+    public Documento insert(
+            @PathVariable Long setorId,
+            @PathVariable Long pastaId,
+            @RequestBody Documento novo) {
+        return service.insert(setorId, pastaId, novo);
+    }
+
+    @PutMapping
+    public Documento update(
+            @PathVariable Long setorId,
+            @PathVariable Long pastaId,
+            @RequestBody Documento documento) {
+        return service.update(setorId, pastaId, documento);
+    }
 }

@@ -1,0 +1,20 @@
+### listar documentos
+GET http://localhost:8080/setores/1/pastas/1/documentos
+Content-Type: application/json
+
+### novo documento
+POST http://localhost:8080/setores/1/pastas/1/documentos
+Content-Type: application/json
+
+{
+  "titulo": "um novo documento"
+}
+
+### atualizar documento
+PUT http://localhost:8080/setores/1/pastas/2/documentos
+Content-Type: application/json
+
+{
+  "id": 2,
+  "titulo": "alterando documento"
+}
