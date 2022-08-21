@@ -1,0 +1,16 @@
+version: 3
+# primeiro uso
+# docker-compose -f docker-compose-dev.yml up
+
+# reuso do container
+# docker-compose -f docker-compose-dev.yml stop
+# docker-compose -f docker-compose-dev.yml start
+services:
+  db:
+    image: docker.io/library/mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exercicio_spring_angular
+    ports:
+      - "33066:3306"
+

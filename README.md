@@ -38,4 +38,4 @@ ng new frontend
 
 - uma tela para ver o histórico de um documento
 - corrigir o endpoint de atualização do documento
-- alteração de banco pra realizar o estado de `encerrado`
+- alteração de banco pra realizar o estado de `encerrado` **usando liquibase**

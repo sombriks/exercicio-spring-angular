@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.3'
 	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
 	id 'java'
+	id 'org.liquibase.gradle' version '2.1.1'
 }
 
 group = 'exercicio.java.angular'
@@ -27,8 +28,25 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	liquibaseRuntime 'org.liquibase:liquibase-core'
+	liquibaseRuntime 'info.picocli:picocli:4.6.3'
+	liquibaseRuntime 'org.yaml:snakeyaml:1.30'
+	liquibaseRuntime 'mysql:mysql-connector-java'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+liquibase {
+	activities {
+		main {
+			changeLogFile "src/main/resources/db/changelog/db.changelog-master.yaml"
+			url "jdbc:mysql://localhost:33066/exercicio_spring_angular"
+			driver "com.mysql.cj.jdbc.Driver"
+			username "root"
+			password "root"
+		}
+	}
 }
