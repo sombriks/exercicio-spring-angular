@@ -3,8 +3,12 @@
     <h1>Gestão de documentos</h1>
   </header>
   <nav>
-    <h2>Seções</h2>
-
+    <h2>Setores</h2>
+    <ul>
+      <li *ngFor="let setor of setores">
+        {{setor.nome}}
+      </li>
+    </ul>
   </nav>
   <section>
     <router-outlet></router-outlet>

@@ -40,4 +40,6 @@ ng new frontend
 - corrigir o endpoint de atualização do documento
 - alteração de banco pra realizar o estado de `encerrado` **usando liquibase**
 - adicionar documentação swagger
-- aumentar a cobertura de testes do backend (ver plugin do jacoco no gradle)
+- aumentar a cobertura de testes
+  - relatório de cobertura do backed: `./gradlew build test jacocoTestReport`
+  - relatório de cobertura do frontend: `ng test --no-watch --code-coverage`
