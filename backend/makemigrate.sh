@@ -1,6 +1,6 @@
 # makemigrate.sh
 # script para ajudar na criação de migrações
-if [ -z "$1" ] && [ -z "$2" ]; then
+if [ -z "$1" ]; then
   echo "uso: $0 node_do_novo_migrate"
   exit
 fi
