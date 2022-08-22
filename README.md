@@ -21,18 +21,22 @@ ng new frontend
 
 ## rodando os projetos
 
+certifique-se de ter o banco de dados em pé.
+
 backend:
 
 ```bash
 cd backend
 ./gradlew build
+./gradlew bootRun
 ```
 
-frontnend:
+frontend:
 
 ```bash
 cd frontend
 npm install
+npm start
 ```
 
 ## estrutura do exercício
