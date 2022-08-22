@@ -8,7 +8,7 @@ pequena prova de conceito de um frontend angular consumindo um backend java
 - node 14 (ou nvm usando o 14)
 - mysql 8 (ou container docker/podman rodando o banco)
 
-## criando esqueletos de projeto
+## como os esqueletos de projeto foram criados
 
 backend: [https://start.spring.io/](https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.7.3&packaging=jar&jvmVersion=11&groupId=exercicio.java.angular&artifactId=backend&name=backend&description=Demo%20project%20for%20Spring%20Boot&packageName=exercicio.java.angular.backend&dependencies=lombok,data-jpa,liquibase,mysql,h2,web)
 
@@ -17,6 +17,22 @@ frontend:
 ```bash
 npm install -g @angular/cli
 ng new frontend
+```
+
+## rodando os projetos
+
+backend:
+
+```bash
+cd backend
+./gradlew build
+```
+
+frontnend:
+
+```bash
+cd frontend
+npm install
 ```
 
 ## estrutura do exercício
