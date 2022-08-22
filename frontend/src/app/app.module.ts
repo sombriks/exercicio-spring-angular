@@ -6,6 +6,10 @@ import {AppComponent} from './app.component';
 
 import {DocumentosComponent} from './views/documentos/documentos.component';
 import {ApiService} from "./api/api.service";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatCardModule} from "@angular/material/card";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import {ApiService} from "./api/api.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

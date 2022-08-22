@@ -18,4 +18,7 @@ export class AppComponent implements OnInit {
     this.setores = await this.api.getSetores();
   }
 
+  trackId(index: number, item: any) {
+    return item.id
+  }
 }

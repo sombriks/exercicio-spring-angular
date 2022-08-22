@@ -1,15 +1,22 @@
 <article>
-  <header>
+  <mat-toolbar color="primary">
     <h1>Gestão de documentos</h1>
-  </header>
-  <nav>
-    <h2>Setores</h2>
-    <ul>
-      <li *ngFor="let setor of setores">
-        {{setor.nome}}
-      </li>
-    </ul>
-  </nav>
+  </mat-toolbar>
+  <mat-card>
+    <mat-card-title>Setores</mat-card-title>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel
+          *ngFor="let setor of setores ; trackBy: trackId">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{setor.nome}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
   <section>
     <router-outlet></router-outlet>
   </section>
