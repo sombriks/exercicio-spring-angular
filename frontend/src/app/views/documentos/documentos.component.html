@@ -1,1 +1,28 @@
-<p>documentos works!</p>
+<table mat-table [dataSource]="documentos"
+       *ngIf="documentos && documentos.length > 0">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> #</th>
+    <td mat-cell *matCellDef="let doc"> {{doc.id}} </td>
+  </ng-container>
+  <ng-container matColumnDef="titulo">
+    <th mat-header-cell *matHeaderCellDef> Título</th>
+    <td mat-cell *matCellDef="let doc"> {{doc.titulo}} </td>
+  </ng-container>
+  <ng-container matColumnDef="situacao">
+    <th mat-header-cell *matHeaderCellDef> Situação</th>
+    <td mat-cell *matCellDef="let doc"> {{doc.situacao?.nome || '-'}} </td>
+  </ng-container>
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef> Ações</th>
+    <td mat-cell *matCellDef="let doc">
+      <!-- TODO ações -->
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['id','titulo','situacao','acoes']"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: ['id','titulo','situacao','acoes'];"></tr>
+</table>
+
+<div *ngIf="!documentos || documentos.length == 0">
+  <p>Sem documentos para exibir</p>
+</div>

@@ -8,12 +8,12 @@ import {Pasta, Setor} from "./models";
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
+
   setores: Array<Setor> = [];
   setorAtual?: Setor;
   pastas: Array<Pasta> = [];
 
   constructor(private readonly api: ApiService) {
-
   }
 
   async ngOnInit() {

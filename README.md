@@ -42,4 +42,4 @@ ng new frontend
 - adicionar documentação swagger
 - aumentar a cobertura de testes
   - relatório de cobertura do backed: `./gradlew build test jacocoTestReport`
-  - relatório de cobertura do frontend: `ng test --no-watch --code-coverage`
+  - relatório de cobertura do frontend: `npm run coverage`

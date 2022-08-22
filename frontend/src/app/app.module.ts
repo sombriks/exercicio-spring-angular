@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ import {ApiService} from "../../api/api.service";
 })
 export class DocumentosComponent implements OnInit {
 
-  documentos?: Documento[];
+  documentos: Documento[] = [];
 
   constructor(private route: ActivatedRoute, private api: ApiService) {
   }
