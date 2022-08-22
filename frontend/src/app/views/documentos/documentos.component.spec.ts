@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { DocumentosComponent } from './documentos.component';
+import {DocumentosComponent} from './documentos.component';
+import {AppRoutingModule} from "../../app-routing.module";
 
 describe('DocumentosComponent', () => {
   let component: DocumentosComponent;
@@ -8,9 +9,12 @@ describe('DocumentosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocumentosComponent ]
+      declarations: [DocumentosComponent],
+      imports: [
+        AppRoutingModule,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DocumentosComponent);
     component = fixture.componentInstance;

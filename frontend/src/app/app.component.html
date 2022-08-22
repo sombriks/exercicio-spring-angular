@@ -7,12 +7,19 @@
     <mat-card-content>
       <mat-accordion>
         <mat-expansion-panel
-          *ngFor="let setor of setores ; trackBy: trackId">
+          *ngFor="let setor of setores"
+          (opened)="getPastas(setor)">
           <mat-expansion-panel-header>
             <mat-panel-title>
               {{setor.nome}}
             </mat-panel-title>
           </mat-expansion-panel-header>
+          <p *ngFor="let pasta of pastas">
+            <a
+              [routerLink]="['/setores',setor.id,'pastas',pasta.id,'documentos']">
+              {{pasta.nome}}
+            </a>
+          </p>
         </mat-expansion-panel>
       </mat-accordion>
     </mat-card-content>
@@ -20,5 +27,7 @@
   <section>
     <router-outlet></router-outlet>
   </section>
-  <footer>&copy; exercício java angular 2022</footer>
+  <footer>
+    <p>&copy; exercício java angular 2022</p>
+  </footer>
 </article>
