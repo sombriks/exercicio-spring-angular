@@ -1,3 +1,6 @@
+<h1>{{pasta?.setor?.nome}} - {{pasta.nome}}</h1>
+<button mat-raised-button color="primary" style="margin:1em;" (click)="novo()">Novo documento
+</button>
 <table mat-table [dataSource]="documentos"
        *ngIf="documentos && documentos.length > 0">
   <ng-container matColumnDef="id">

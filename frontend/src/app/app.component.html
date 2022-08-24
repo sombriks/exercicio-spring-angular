@@ -15,7 +15,7 @@
             </mat-panel-title>
           </mat-expansion-panel-header>
           <p *ngFor="let pasta of pastas">
-            <a
+            <a *ngIf="setor.id == pasta.setor?.id"
               [routerLink]="['/setores',setor.id,'pastas',pasta.id,'documentos']">
               {{pasta.nome}}
             </a>
