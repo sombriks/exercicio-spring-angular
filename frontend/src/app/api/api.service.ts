@@ -15,7 +15,6 @@ export class ApiService {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-
       }
     })
   }
@@ -30,7 +29,7 @@ export class ApiService {
     return JSON.parse(result.data);
   }
 
-  async getPastas(setorId: number): Promise<Array<Pasta>> {
+  async getPastas(setorId?: number): Promise<Array<Pasta>> {
     const result = await this.cli.get(`/setores/${setorId}/pastas`)
     return JSON.parse(result.data);
   }
@@ -41,7 +40,8 @@ export class ApiService {
   }
 
   async salvarDocumento(setorId: number, pastaId: number, doc: any): Promise<Documento> {
-    const result = await this.cli[doc.id ? "put" : "post"](`/setores/${setorId}/pastas/${pastaId}/documentos`, JSON.stringify(doc));
+    const path = `/setores/${setorId}/pastas/${pastaId}/documentos`;
+    const result = await this.cli[doc.id ? "put" : "post"](path, JSON.stringify(doc));
     return JSON.parse(result.data);
   }
 }

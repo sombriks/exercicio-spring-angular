@@ -1,12 +1,12 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {DocumentoDialogComponent} from './documento-dialog.component';
+import {TransferirDialogComponent} from './transferir-dialog.component';
 import {AppModule} from "../../app.module";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
-describe('DocumentoDialogComponent', () => {
-  let component: DocumentoDialogComponent;
-  let fixture: ComponentFixture<DocumentoDialogComponent>;
+describe('TransferirDialogComponent', () => {
+  let component: TransferirDialogComponent;
+  let fixture: ComponentFixture<TransferirDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('DocumentoDialogComponent', () => {
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(DocumentoDialogComponent);
+    fixture = TestBed.createComponent(TransferirDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

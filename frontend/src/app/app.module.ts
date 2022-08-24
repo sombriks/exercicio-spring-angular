@@ -17,14 +17,19 @@ import {MatButtonModule} from "@angular/material/button";
 import { DocumentoDialogComponent } from './shared/documento-dialog/documento-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
+import { TransferirDialogComponent } from './shared/transferir-dialog/transferir-dialog.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
     AppComponent,
     DocumentosComponent,
-    DocumentoDialogComponent
+    DocumentoDialogComponent,
+    TransferirDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,10 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

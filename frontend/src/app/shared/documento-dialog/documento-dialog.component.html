@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>{{data.id}}</h1>
+<h1 mat-dialog-title>{{data.id ? ('Editar ' + data.id) : 'Novo'}}</h1>
 <div mat-dialog-content>
   <mat-form-field appearance="fill">
     <mat-label>Nome</mat-label>
@@ -7,5 +7,7 @@
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button (click)="dialogRef.close()">cancelar</button>
-  <button mat-raised-button color="primary"  [mat-dialog-close]="data" cdkFocusInitial>salvar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data"
+          cdkFocusInitial>salvar
+  </button>
 </div>

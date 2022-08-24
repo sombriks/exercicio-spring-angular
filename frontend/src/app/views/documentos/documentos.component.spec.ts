@@ -2,6 +2,8 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {DocumentosComponent} from './documentos.component';
 import {AppRoutingModule} from "../../app-routing.module";
+import {ApiService} from "../../api/api.service";
+import {AppModule} from "../../app.module";
 
 describe('DocumentosComponent', () => {
   let component: DocumentosComponent;
@@ -9,9 +11,8 @@ describe('DocumentosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DocumentosComponent],
       imports: [
-        AppRoutingModule,
+        AppModule
       ]
     })
       .compileComponents();

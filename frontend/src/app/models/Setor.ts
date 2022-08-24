@@ -1,4 +1,4 @@
 export default interface Setor {
-  id: number,
+  id?: number,
   nome: string
 }

@@ -1,13 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Observable, switchMap} from "rxjs";
-
-import {Documento, Pasta} from "../../models";
-import {ApiService} from "../../api/api.service";
 import {MatDialog} from "@angular/material/dialog";
+
+import {DadosTransferencia, Documento, Pasta, Setor} from "../../models";
+import {ApiService} from "../../api/api.service";
 import {
   DocumentoDialogComponent
 } from "../../shared/documento-dialog/documento-dialog.component";
+import {
+  TransferirDialogComponent
+} from "../../shared/transferir-dialog/transferir-dialog.component";
 
 @Component({
   selector: 'app-documentos',
@@ -27,10 +29,9 @@ export class DocumentosComponent implements OnInit {
     public dialog: MatDialog) {
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.listar();
   }
-
 
   listar(): void {
     this.route.paramMap.subscribe(async next => {
@@ -41,13 +42,28 @@ export class DocumentosComponent implements OnInit {
     });
   }
 
-  novo(doc: Documento = {titulo: "Novo documento"}): void {
+  salvar(doc: Documento = {titulo: "Novo documento"}): void {
     this.dialog.open(DocumentoDialogComponent, {
-      data: doc,
+      data: ({...doc}),
       width: "50%"
     }).afterClosed().subscribe(async result => {
-      await this.api.salvarDocumento(this.setorId, this.pastaId, result);
-      this.listar();
+      if (result) {
+        await this.api.salvarDocumento(this.setorId, this.pastaId, result);
+        this.listar();
+      }
+    });
+  }
+
+  transferir(doc: Documento) {
+    this.dialog.open(TransferirDialogComponent, {
+      data: ({...doc}),
+      width: "50%"
+    }).afterClosed().subscribe(async (result: DadosTransferencia) => {
+      if (result) {
+        const {setor, pasta, documento} = result;
+        await this.api.salvarDocumento(<number>setor.id, <number>pasta.id, documento);
+        this.listar();
+      }
     });
   }
 

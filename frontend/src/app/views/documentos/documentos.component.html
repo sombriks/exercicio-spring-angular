@@ -1,5 +1,6 @@
-<h1>{{pasta?.setor?.nome}} - {{pasta.nome}}</h1>
-<button mat-raised-button color="primary" style="margin:1em;" (click)="novo()">Novo documento
+<h1>{{pasta.setor?.nome}} - {{pasta.nome}}</h1>
+<button mat-raised-button color="primary" style="margin:1em;"
+        (click)="salvar()">Novo documento
 </button>
 <table mat-table [dataSource]="documentos"
        *ngIf="documentos && documentos.length > 0">
@@ -18,7 +19,21 @@
   <ng-container matColumnDef="acoes">
     <th mat-header-cell *matHeaderCellDef> Ações</th>
     <td mat-cell *matCellDef="let doc">
-      <!-- TODO ações -->
+      <button style="margin:1em;" mat-flat-button
+              aria-label="Menu"
+              [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu>
+        <button mat-menu-item aria-label="Editar" (click)="salvar(doc)">
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button mat-menu-item aria-label="Transferir" (click)="transferir(doc)">
+          <mat-icon>swap_horiz</mat-icon>
+          <span>Transferir</span>
+        </button>
+      </mat-menu>
     </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="['id','titulo','situacao','acoes']"></tr>

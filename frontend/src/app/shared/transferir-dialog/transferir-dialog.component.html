@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Transferir documento</h1>
+<h2>Selecione o setor</h2>
+<div mat-dialog-content>
+  <mat-form-field class="example-full-width">
+    <mat-label>Setor</mat-label>
+    <input type="text"
+           cdkFocusInitial
+           placeholder="Selecione um setor"
+           matInput
+           [formControl]="setorControl"
+           [matAutocomplete]="setorAuto">
+    <mat-autocomplete #setorAuto autoActiveFirstOption
+                      [displayWith]="displayFn">
+      <mat-option *ngFor="let setor of setores" [value]="setor">
+        {{setor.nome}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+<h2>Selecione a pasta</h2>
+<div mat-dialog-content>
+  <mat-form-field class="example-full-width">
+    <mat-label>Pasta</mat-label>
+    <input type="text"
+           placeholder="Selecione uma pasta"
+           matInput
+           [formControl]="pastaControl"
+           [matAutocomplete]="pastaAuto">
+    <mat-autocomplete #pastaAuto autoActiveFirstOption
+                      [displayWith]="displayFn">
+      <mat-option *ngFor="let pasta of pastas" [value]="pasta">
+        {{pasta.nome}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="dialogRef.close()">cancelar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="({setor: setorControl.value, pasta: pastaControl.value, documento: data})"
+          [disabled]="pastaControl.value && !pastaControl.value.id">
+    transferir
+  </button>
+</div>
