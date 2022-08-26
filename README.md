@@ -46,8 +46,6 @@ npm start
   - dentro dos setores distribuir em pastas
     - documentos começam sem pasta
   - transferir documentos entre setores
-    - aceitar
-    - devolver
   - documento tem estado
     - novo
     - transferido
