@@ -2,7 +2,6 @@ package exercicio.java.angular.backend.documentos.controller;
 
 import exercicio.java.angular.backend.documentos.model.Documento;
 import exercicio.java.angular.backend.documentos.service.IDocumentoService;
-import liquibase.pro.packaged.P;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
