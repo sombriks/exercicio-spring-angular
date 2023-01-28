@@ -54,6 +54,8 @@ npm start
 
 ## problemas para estudar
 
+- fazer o filtro de pesquisa de documento funcionar
+  - ao digitar ou apertar um botão realizar busca com filtro
 - uma tela para ver o histórico de um documento
 - corrigir o endpoint de atualização do documento
 - alteração de banco pra realizar o estado de `encerrado` **usando liquibase**

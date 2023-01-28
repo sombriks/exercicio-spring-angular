@@ -34,8 +34,8 @@ export class ApiService {
     return JSON.parse(result.data);
   }
 
-  async getDocumentos(setorId: number, pastaId: number): Promise<Array<Documento>> {
-    const result = await this.cli.get(`/setores/${setorId}/pastas/${pastaId}/documentos`)
+  async getDocumentos(setorId: number, pastaId: number, q = ""): Promise<Array<Documento>> {
+    const result = await this.cli.get(`/setores/${setorId}/pastas/${pastaId}/documentos?q=${q}`)
     return JSON.parse(result.data);
   }
 

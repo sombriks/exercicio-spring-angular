@@ -2,6 +2,10 @@
 <button mat-raised-button color="primary" style="margin:1em;"
         (click)="salvar()">Novo documento
 </button>
+<mat-form-field class="example-full-width">
+  <mat-label>Filtrar resultados</mat-label>
+  <input matInput placeholder="Nome do documento" [(ngModel)]="q">
+</mat-form-field>
 <table mat-table [dataSource]="documentos"
        *ngIf="documentos && documentos.length > 0">
   <ng-container matColumnDef="id">

@@ -18,6 +18,7 @@ import {
 })
 export class DocumentosComponent implements OnInit {
 
+  q = "";
   pasta: Pasta = {nome: "Carregando..."};
   documentos: Documento[] = [];
   setorId: number = 0;
@@ -38,7 +39,7 @@ export class DocumentosComponent implements OnInit {
       this.setorId = parseInt(<string>next.get("setorId"));
       this.pastaId = parseInt(<string>next.get("pastaId"));
       this.pasta = await this.api.getPasta(this.setorId, this.pastaId);
-      this.documentos = await this.api.getDocumentos(this.setorId, this.pastaId);
+      this.documentos = await this.api.getDocumentos(this.setorId, this.pastaId, this.q);
     });
   }
 
